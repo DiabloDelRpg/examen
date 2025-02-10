@@ -1,25 +1,21 @@
 import 'package:flutter/material.dart';
-import './screens/home_screen.dart';
+import 'screens/home_screen.dart';
+import 'theme/app_theme.dart';
 
 void main() {
-  runApp(MyHomeApp());
+  runApp(const MyApp());
 }
 
-class MyHomeApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-theme: ThemeData(
-  primaryColor: Color(0xFF2D4D5D),
-  scaffoldBackgroundColor: Color(0xFF2D4D5D),
-  textTheme: TextTheme(
-    bodyLarge: TextStyle(color: Colors.white),
-    bodyMedium: TextStyle(color: Colors.white),
-  ),
-),
-
-      home: HomeScreen(),
+      title: 'CarPoolin',
+      theme: AppTheme.lightTheme,
+      home: const HomeScreen(),
     );
   }
 }
